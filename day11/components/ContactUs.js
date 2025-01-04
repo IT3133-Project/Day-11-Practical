@@ -2,10 +2,13 @@ import { StyleSheet, View } from 'react-native';
 import { Text, Divider, TextInput, Button } from 'react-native-paper';
 import Home from './Home';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function ContactUs() {
     const [name, setName] = useState('');
+    const navigation = useNavigation();
+
     return (
         <>
             <View style={styles.header}>
@@ -26,7 +29,10 @@ export default function ContactUs() {
                     <TextInput label="Message" mode='outlined' multiline={false} numberOfLines={5} />
                 </View>
                 <View style={styles.input}>
-                    <Button  mode="contained" >Contact</Button>
+                    <Button mode="contained" >Contact</Button>
+                </View>
+                <View style={styles.input}>
+                    {/* <Button mode="contained" onPress={()=>navigation.navigate('AboutUs')}>Go to About Us</Button> */}
                 </View>
 
                 <Text>{name}</Text>
