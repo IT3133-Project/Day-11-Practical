@@ -6,13 +6,14 @@ import ContactUs from './components/ContactUs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
+import AboutUs from './components/AboutUs';
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="AboutUs"
       screenOptions={{
         headerStyle: { backgroundColor: 'lightblue' },  
       }}
@@ -26,6 +27,11 @@ function RootStack() {
         name="Contact"
         component={ContactUs}
         options={{ title: 'Contact Us' }}
+      />
+      <Stack.Screen
+        name="AboutUs"
+        component={AboutUs}
+        options={{ title: 'About Us' }}
       />
     </Stack.Navigator>
   );
