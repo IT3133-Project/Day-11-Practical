@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
+import { StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Home from './components/Home';
@@ -10,29 +9,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator();
 function RootStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator initialRouteName="Home"  screenOptions={{
+      headerStyle: { backgroundColor: 'lightblue' },
+    }}>
+      <Stack.Screen name="Home" component={Home} options={{ title: "Welcome" }} />
+      <Stack.Screen name="contact" component={ContactUs} options={{ title: "Contact Us" }} />
     </Stack.Navigator>
   );
 }
 
 export default function App() {
   return (
-    <PaperProvider>
-      <SafeAreaProvider>
-        <SafeAreaView>
-          <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <NavigationContainer>
-            <RootStack />
-            </NavigationContainer>
-          </KeyboardAvoidingView>
 
-        </SafeAreaView>
-      </SafeAreaProvider>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <RootStack />
+      </NavigationContainer>
+    </SafeAreaProvider>
 
 
 
-    </PaperProvider>
+
   );
 }
 
