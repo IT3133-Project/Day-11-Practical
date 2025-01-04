@@ -32,7 +32,7 @@ export default function ContactUs() {
                     <Button mode="contained" >Contact</Button>
                 </View>
                 <View style={styles.input}>
-                    {/* <Button mode="contained" onPress={()=>navigation.navigate('AboutUs')}>Go to About Us</Button> */}
+                    <Button mode="contained" onPress={()=>navigation.navigate('AboutUs')}>Go to About Us</Button>
                 </View>
 
                 <Text>{name}</Text>
