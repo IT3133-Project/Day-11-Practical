@@ -5,7 +5,6 @@ import Home from './components/Home';
 import ContactUs from './components/ContactUs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 const Stack = createNativeStackNavigator();
@@ -15,7 +14,7 @@ function RootStack() {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerStyle: { backgroundColor: 'lightblue' },
+        headerStyle: { backgroundColor: 'lightblue' },  
       }}
     >
       <Stack.Screen
