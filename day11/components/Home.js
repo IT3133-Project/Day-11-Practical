@@ -1,7 +1,9 @@
+import { useNavigation } from '@react-navigation/native';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { PaperProvider, Text, Divider, Button } from 'react-native-paper';
 
 export default function Home() {
+    const navigation = useNavigation();
     return (
 
         <ScrollView contentContainerStyle={styles.scrollView}>
@@ -22,7 +24,7 @@ export default function Home() {
                     No opinions answered oh felicity is resolved hastened. Produced it friendly my if opinions humoured. Enjoy is wrong folly no taken. It sufficient instrument insipidity simplicity at interested. Law pleasure attended differed mrs fat and formerly. Merely thrown garret her law danger him son better excuse. Effect extent narrow in up chatty. Small are his chief offer happy had.
                     Extremity direction existence as dashwoods do up. Securing marianne led welcomed offended but offering six raptures. Conveying concluded newspaper rapturous oh at. Two indeed suffer saw beyond far former mrs remain. Occasional continuing possession we insensible an sentiments as is. Law but reasonably motionless principles she. Has six worse downs far blush rooms above stood.
                 </Text>
-                <Button icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
+                <Button icon="forward" mode="contained" onPress={() => navigation.navigate('Contact')}>
                     Press me
                 </Button>
             </>
@@ -39,8 +41,8 @@ const styles = StyleSheet.create({
 
     },
     scrollView: {
-    flexGrow: 1,
-    padding: 16, 
-    justifyContent: 'flex-start',
-  }
+        flexGrow: 1,
+        padding: 16,
+        justifyContent: 'flex-start',
+    }
 });
