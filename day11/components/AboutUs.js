@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
-import {  Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import { Divider, PaperProvider,Button } from "react-native-paper";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Divider, PaperProvider, Button } from "react-native-paper";
 
 export default function AboutUs() {
     const navigation = useNavigation();
@@ -22,9 +22,12 @@ export default function AboutUs() {
 
                     The permanent site of the University of Vavuniya is located about ten kilometers away from Vavuniya town along the Vavuniya Mannar Road at Sopalapuliyankulam, Pampaimadu. The university owns one hundred and ninety five (195) acres of land, and it is a residential university. The university maintains a forest pocket and two minor tanks within this land area. The iconic landscape contributes to the university’s signature to keep generations connected to the University of Vavuniya. It paves the way to get a new collegiate experience for our existing and prospective students.
                 </Text>
-                <Button icon="forward" mode="contained" onPress={() => navigation.navigate('Contact')}>
-    Press me
-</Button>
+                <Button icon="forward" mode="contained" onPress={() => navigation.push('AboutUs')}>Call Again </Button>
+                <Button mode="outlined" onPress={() => navigation.navigate('Home')}>Go to Home</Button>
+                <Button mode="outlined" onPress={() => navigation.popToTop()}>Go to Top Screen</Button>
+                <View style={styles.footer}>
+                    <Text>MyApp © 2024</Text>
+                </View>
 
             </ScrollView>
         </PaperProvider>
